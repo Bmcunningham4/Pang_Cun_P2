@@ -1,6 +1,8 @@
 # Pang_Cun_P2
 Onto the next boyyyyyy
 
+23rd October next meet to discuss progress
+
 <<<<<<< HEAD
 ---------------------------------
 Isaac:
