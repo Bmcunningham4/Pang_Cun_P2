@@ -49,8 +49,9 @@ def password_2(length, capitals, numbers, punct): # Note on this for every numbe
     for i in range(punct):
         password.append(random.choice(punctuation))
     
+    random.shuffle(password) #? This is a clutch addition
     new_password = "".join(password)
     return new_password
 
-bens_2 = password_2(2,0,4,1)
+bens_2 = password_2(6,1,1,1)
 print(bens_2)
