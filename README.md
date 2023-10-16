@@ -13,3 +13,20 @@ Rated (Easy/ Medium/ Hard) lol
 - Flashcard Quiz game (M)
 - Weather App (H)
 - Currency converter (H)
+
+# Cun's files
+- Password Generator
+- ATM
+- Flashcard Quiz game
+- Currency converter
+
+# Pan's files
+- Madlib
+- Calculater
+- Number guessing game
+- Weather App 
+
+# Up for grabs
+- To do list 
+
+
