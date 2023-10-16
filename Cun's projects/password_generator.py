@@ -18,13 +18,39 @@ import random
 
 lower_alphabet = string.ascii_lowercase
 upper_alphabet = string.ascii_uppercase
-alphabet = string.ascii_letters
+full_alphabet = string.ascii_letters
 
 digits = string.digits
 punctuation = string.punctuation
 
-
+#todo: When I comeback turn this into a class then make next 2!
 # Password generator 1: Generates password of length n
-def make_simple_password(length):
+def password_1(length):
     password = ""
+    for i in range(length):
+        password += random.choice(full_alphabet + digits + punctuation)
+    return password
 
+bens_pw = password_1(10)
+print(bens_pw)
+
+# Password generator 2: Chose total length, how many capitals, numbers and punctuation characters you want
+def password_2(length, capitals, numbers, punct): # Note on this for every number total length greater than (cap+num+punct) will assing a non-capital letter!
+    password = []
+    new_length = length - capitals - numbers - punct
+    if new_length < 0:
+        return f"Your password lenth must be longer than {length}"
+    for i in range(new_length):
+        password.append(random.choice(lower_alphabet))
+    for i in range(capitals):
+        password.append(random.choice(upper_alphabet))
+    for i in range(numbers):
+        password.append(random.choice(digits))
+    for i in range(punct):
+        password.append(random.choice(punctuation))
+    
+    new_password = "".join(password)
+    return new_password
+
+bens_2 = password_2(2,0,4,1)
+print(bens_2)
