@@ -16,8 +16,6 @@
 import string
 import random
 
-
-
 class PasswordGenerator:
 
     #Need these as attributes within class
@@ -56,11 +54,30 @@ class PasswordGenerator:
     
     # Password gen 3: Turns a string into a password that meets these requirements: At least 8 characters, 1 capital & 1 punct symbol
     def password_3(self, stringy):
-        
+        string_test = all(char in self.full_alphabet for char in stringy) #? Making sure valid string to begin with..
+        if string_test == True:
+            new_pass = stringy.capitalize()
+
+            if len(new_pass) < 8:
+                extra_letters_needed = 8 - len(new_pass)
+                for i in range(extra_letters_needed):
+                    new_pass += random.choice(self.lower_alphabet)
+
+            new_pass += random.choice(self.digits)
+            new_pass += random.choice(self.punctuation)
+
+        else:
+            print(f"{stringy} is not a valid string, must contain only letters!. eg mango..")  
+        return new_pass
+
+    # Password gen 4: Generates n passwords of lenght m
+    def password_4(self, how_many, length):
+        p1
 
 
 #? Testing station...    
 test1 = PasswordGenerator()
 print(test1.password_1(8))
 print(test1.password_2(10, 3, 3, 3))
-
+print(test1.password_3("mango")) #? This method is classic lol
+print(test1.password_3("mangosfordays"))
