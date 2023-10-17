@@ -16,42 +16,51 @@
 import string
 import random
 
-lower_alphabet = string.ascii_lowercase
-upper_alphabet = string.ascii_uppercase
-full_alphabet = string.ascii_letters
 
-digits = string.digits
-punctuation = string.punctuation
 
-#todo: When I comeback turn this into a class then make next 2!
-# Password generator 1: Generates password of length n
-def password_1(length):
-    password = ""
-    for i in range(length):
-        password += random.choice(full_alphabet + digits + punctuation)
-    return password
+class PasswordGenerator:
 
-bens_pw = password_1(10)
-print(bens_pw)
+    #Need these as attributes within class
+    lower_alphabet = string.ascii_lowercase
+    upper_alphabet = string.ascii_uppercase
+    full_alphabet = string.ascii_letters
+    digits = string.digits
+    punctuation = string.punctuation
 
-# Password generator 2: Chose total length, how many capitals, numbers and punctuation characters you want
-def password_2(length, capitals, numbers, punct): # Note on this for every number total length greater than (cap+num+punct) will assing a non-capital letter!
-    password = []
-    new_length = length - capitals - numbers - punct
-    if new_length < 0:
-        return f"Your password lenth must be longer than {length}"
-    for i in range(new_length):
-        password.append(random.choice(lower_alphabet))
-    for i in range(capitals):
-        password.append(random.choice(upper_alphabet))
-    for i in range(numbers):
-        password.append(random.choice(digits))
-    for i in range(punct):
-        password.append(random.choice(punctuation))
+    # Password generator 1: Generates password of length n
+    def password_1(self, length):
+        password = ""
+        for i in range(length):
+            password += random.choice(self.full_alphabet + self.digits + self.punctuation)
+        return password
+
+
+    # Password generator 2: Chose total length, how many capitals, numbers and punctuation characters you want
+    def password_2(self, length, capitals, numbers, punct): # Note on this for every number total length greater than (cap+num+punct) will assing a non-capital letter!
+        password = []
+        new_length = length - capitals - numbers - punct
+        if new_length < 0:
+            return f"Your password lenth must be longer than {length}, for these parameters!"
+        for i in range(new_length):
+            password.append(random.choice(self.lower_alphabet))
+        for i in range(capitals):
+            password.append(random.choice(self.upper_alphabet))
+        for i in range(numbers):
+            password.append(random.choice(self.digits))
+        for i in range(punct):
+            password.append(random.choice(self.punctuation))
+        
+        random.shuffle(password) #? This is a clutch addition
+        new_password = "".join(password)
+        return new_password
     
-    random.shuffle(password) #? This is a clutch addition
-    new_password = "".join(password)
-    return new_password
+    # Password gen 3: Turns a string into a password that meets these requirements: At least 8 characters, 1 capital & 1 punct symbol
+    def password_3(self, stringy):
+        
 
-bens_2 = password_2(6,1,1,1)
-print(bens_2)
+
+#? Testing station...    
+test1 = PasswordGenerator()
+print(test1.password_1(8))
+print(test1.password_2(10, 3, 3, 3))
+
