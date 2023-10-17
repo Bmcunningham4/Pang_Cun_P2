@@ -55,6 +55,7 @@ class PasswordGenerator:
     # Password gen 3: Turns a string into a password that meets these requirements: At least 8 characters, 1 capital & 1 punct symbol
     def password_3(self, stringy):
         string_test = all(char in self.full_alphabet for char in stringy) #? Making sure valid string to begin with..
+        new_pass = ""
         if string_test == True:
             new_pass = stringy.capitalize()
 
@@ -72,12 +73,17 @@ class PasswordGenerator:
 
     # Password gen 4: Generates n passwords of lenght m
     def password_4(self, how_many, length):
-        p1
-
+        passwords = []
+        for i in range(how_many): 
+            password = self.password_1(length)
+            passwords.append(password)
+        return passwords #? Ideally I'd rather these passwords be iterated like on list with here are your n passwords of lenth m: (but this will have to do..)
 
 #? Testing station...    
+
 test1 = PasswordGenerator()
 print(test1.password_1(8))
 print(test1.password_2(10, 3, 3, 3))
 print(test1.password_3("mango")) #? This method is classic lol
 print(test1.password_3("mangosfordays"))
+print(test1.password_4(4, 8))
