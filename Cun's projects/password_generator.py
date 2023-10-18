@@ -79,8 +79,7 @@ class PasswordGenerator:
             passwords.append(password)
         return passwords #? Ideally I'd rather these passwords be iterated like on list with here are your n passwords of lenth m: (but this will have to do..)
 
-#? Testing station...    
-
+#? Testing station...    (all working ✅)
 test1 = PasswordGenerator()
 print(test1.password_1(8))
 print(test1.password_2(10, 3, 3, 3))

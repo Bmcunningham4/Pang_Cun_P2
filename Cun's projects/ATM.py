@@ -9,4 +9,49 @@
 ? If I want to make more complicated, could inherit another class with extra features like:
 - ability to exchange
 - Make a new account/ transfer between accounts?
+
+#* ahahah I'll make a pang account and a cun account with passwords and diff amounts..
 """
+import time
+
+#! Pang's password is 1234
+#! Cun's password is 3333
+
+class ATM:
+    max_attempts = 3
+    cun_balance = 5000000
+    pang_balance = -50
+
+    def __init__(self): #? Is this garbage really needed here..
+        self.incorrect_attempts = 0 
+
+    def check_pin(self):
+        for i in range(3):
+            pin = float(input("Please enter you 4 digit pin fam: "))
+            if pin == 1234 or pin == 3333:
+                break
+            else:
+                self.incorrect_attempts += 1
+                print("That pin is incorrect please try again...")  
+
+        if pin == 1234:
+            print("Welcome to your account Mr. Pang")
+            whos_account = "King's account"
+
+        elif pin == 3333:
+            print("Welcome to your account King")
+            whos_account = "Pang's account"   
+
+        if self.incorrect_attempts == self.max_attempts:
+            print()
+            print("Incorrect password too many times!! This Atm will now self destruct in 5 seconds..")
+            for i in range(5, 0, -1):
+                print(i)
+                time.sleep(1)
+            print("BOOOOOOM 🧨🎉")
+
+        return whos_account
+
+#? Testing station...
+bens_test = ATM()
+print(bens_test.check_pin())
