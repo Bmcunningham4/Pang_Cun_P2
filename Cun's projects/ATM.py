@@ -53,7 +53,6 @@ class ATM:
             print("BOOOOOOM 🧨🎉")
         return ""
         
-    #! This is slightly complicated need to have checked pin but don't want to call it again.. :(
     def view_balance(self):
         self.check_pin() 
 
@@ -64,6 +63,38 @@ class ATM:
 
         return ""
 
+    def deposit(self, amount):
+        #! This is where it actually gets complicated because I don't want to have to check the pin every single time... just once
+        if self.whos_account == "Pang's account":
+            self.pang_balance += amount
+        elif self.whos_account == "King's account":
+            self.cun_balance += amount
+        return self.cun_balance, self.pang_balance #? Leaving there's here for the moment to make sure this is working!!
+
+
+    def withdraw(self, amount): 
+        if self.whos_account == "Pang's account":
+            if amount > self.pang_balance:
+                print("Insufficient funds broke boy..")
+            else:
+                self.pang_balance -= amount
+        elif self.whos_account == "King's account":
+            if amount > self.cun_balance:
+                print("insufficicient funds broke king..")
+            else:
+                self.cun_balance -= amount
+        return self.cun_balance, self.pang_balance #? Leaving there's here for the moment to make sure this is working!!
+
+#todo: Additions / improvements from here..
+"""
+- Add a hisory method if I can be fkd.. (Would need to use the enumerate method probs gets a bit hectic will leave as this for now!!!)
+- Fix it so you only need to type your pin in once..
+- Loop throught the system so it doesn't exit you each time, (and make sure balance doesn't keep resetting until you exit!!!)
+"""
+
+
 #? Testing station...
 bens_test = ATM()
 print(bens_test.view_balance())
+print(bens_test.deposit(20))
+print(bens_test.withdraw(100))
