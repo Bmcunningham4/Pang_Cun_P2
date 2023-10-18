@@ -22,9 +22,11 @@ class ATM:
     cun_balance = 5000000
     pang_balance = -50
 
-    def __init__(self): #? Is this garbage really needed here..
+    def __init__(self): #* Is this garbage really needed here..
         self.incorrect_attempts = 0 
+        self.whos_account = None #* This shit seems to save the day for some reason..
 
+    # Got very carried away with this one yikes..
     def check_pin(self):
         for i in range(3):
             pin = float(input("Please enter you 4 digit pin fam: "))
@@ -36,22 +38,32 @@ class ATM:
 
         if pin == 1234:
             print("Welcome to your account Mr. Pang")
-            whos_account = "King's account"
+            self.whos_account = "Pang's account"   
 
         elif pin == 3333:
             print("Welcome to your account King")
-            whos_account = "Pang's account"   
+            self.whos_account = "King's account"
 
         if self.incorrect_attempts == self.max_attempts:
             print()
-            print("Incorrect password too many times!! This Atm will now self destruct in 5 seconds..")
+            print("Incorrect password too many times!! This ATM will now self destruct in 5 seconds..")
             for i in range(5, 0, -1):
                 print(i)
                 time.sleep(1)
             print("BOOOOOOM 🧨🎉")
+        return ""
+        
+    #! This is slightly complicated need to have checked pin but don't want to call it again.. :(
+    def view_balance(self):
+        self.check_pin() 
 
-        return whos_account
+        if self.whos_account == "Pang's account":
+            print(f"The balance of Pang's account is ${self.pang_balance}")
+        elif self.whos_account == "King's account":
+            print(f"The balance of the King's account is ${self.cun_balance}")
+
+        return ""
 
 #? Testing station...
 bens_test = ATM()
-print(bens_test.check_pin())
+print(bens_test.view_balance())
