@@ -1,4 +1,5 @@
 # Key features/ ideas that my glashcard quiz game must have...
+#! Overall could add diff quizzes to play, but this isn't flashcards it's just a quiz game which is ok...
 """
 ? Need
 - User interface 
@@ -28,19 +29,20 @@ from quiz_qna import (
     question_2,
     question_3,
     question_4,
-    question_5
+    question_5, 
+    question_6
 )
 
 print("Welcome to my lit NBA themed Quiz... Yew")
 
-list_of_questions = [question_1, question_2, question_3, question_4, question_5]
+list_of_questions = [question_1, question_2, question_3, question_4, question_5, question_6]
 random.shuffle(list_of_questions) # You don't assign this to a variable just do it in place...
 
 
 def display_questions():
     q_number = 0
     num_correct = 0 
-    
+
     for question in list_of_questions:
         q_number += 1
         print()
@@ -56,6 +58,23 @@ def display_questions():
 
         print()
         user_answer = input("Enter: A, B or C: ").upper()
+        correct_ans = question["correct_answer"]
+
+        while user_answer not in ["A", "B", "C"]:
+            print(f"{user_answer} is not a valid input, please chose again..")
+            user_answer = input("Enter: A, B or C: ").upper()
+
+        if user_answer == question["correct_answer"]:
+            num_correct += 1
+            print("Correct!")
+        else:
+            print(f"Incorrect!! Option {correct_ans} was the correct answer")
+
+    print()
+    print("RESULTS")
+    print(f"You scored {num_correct} / 6!!")      
+    percent = round(num_correct * 100 / 6, 2)
+    print(f"That is {percent}% correct! Woooo")
 
 display_questions()
 
