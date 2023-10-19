@@ -30,12 +30,13 @@ from quiz_qna import (
     question_3,
     question_4,
     question_5, 
-    question_6
+    question_6,
+    question_7
 )
 
 print("Welcome to my lit NBA themed Quiz... Yew")
 
-list_of_questions = [question_1, question_2, question_3, question_4, question_5, question_6]
+list_of_questions = [question_1, question_2, question_3, question_4, question_5, question_6, question_7]
 random.shuffle(list_of_questions) # You don't assign this to a variable just do it in place...
 
 
@@ -72,8 +73,8 @@ def display_questions():
 
     print()
     print("RESULTS")
-    print(f"You scored {num_correct} / 6!!")      
-    percent = round(num_correct * 100 / 6, 2)
+    print(f"You scored {num_correct} / 7!!")      
+    percent = round(num_correct * 100 / 7, 2)
     print(f"That is {percent}% correct! Woooo")
 
 display_questions()
