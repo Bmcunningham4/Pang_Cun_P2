@@ -41,3 +41,10 @@ question_6 = {
     "correct_answer": "C",
     "explanation": "Famously back in 2018 Ben Cunningham received a wildcard entrance to the 3pt chef off, and won..."
 }
+
+question_7 = {
+    "question": "Who would win in a 1v1? Prime Michael Jordan or Cunners from the Bensational era?",
+    "options": ["Bentastic", "Michael 'no chance' Jordan", "primetimecunningham"],
+    "correct_answer": "C",
+    "explanation": "Bensational was the Linsanity of the 2012 era in Australia. MJ and his outdated playing style would stand no chance against the modern techniques of this time...including backflip shots and cRaZy NoScoPe ShOtz"
+}
