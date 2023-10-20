@@ -19,11 +19,25 @@
 """Didn't work in the end and not worth getting a free trial anywhere..
 api_key = "9341f1a55ff4fa63421f6a94951ef547"
 api_url = "https://fixer.io/dashboard"
-"""
 import requests
+"""
 
+import sys
 
+#! Need to get better with this shite...
+file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/quiz_qna.py" # raw string bby to account for space and '
+sys.path.append(file_path)
 
+# Ohhhhhh The reason you do this is because then you don't have to use the file name each time..
+from quiz_qna import (
+    question_1,
+    question_2,
+    question_3,
+    question_4,
+    question_5, 
+    question_6,
+    question_7
+)
 
 
 
