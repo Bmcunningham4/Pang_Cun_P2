@@ -52,7 +52,7 @@ def aussie_converter(amount, num): # (Num of what new currency you want)
     country2 = currency_conversions[num][4]
     country_type = currency_conversions[num][3]
 
-    new_amount = amount * ratio
+    new_amount = round(amount * ratio, 2)
     print(f"Aussie Dollar conversion to {country2} {country_type}")
     return f"{amount} AUD => {new_amount} {abrev2} "
 
@@ -63,9 +63,33 @@ def convert_to_aussie(amount, num):
     country2 = currency_conversions[num][4]
     country_type = currency_conversions[num][3]
 
-    new_amount = amount / ratio
-    print(f"Aussie Dollar conversion to {country2} {country_type}")
-    return f"{amount} AUD => {new_amount} {abrev2} "
+    new_amount = round(amount / ratio, 2)
+    print(f"{country2} {country_type} conversion to Aussie Dollar ")
+    return f"{amount} {abrev2} => {new_amount} AUD "
+
+def diff_to_diff(amount, num1, num2):
+    ratio1 = currency_conversions[num1][2]
+    ratio2 = currency_conversions[num2][2]
+
+
+    abrev1 = currency_conversions[num1][1]
+    abrev2 = currency_conversions[num2][1]
+
+    country1 = currency_conversions[num1][4]
+    country2 = currency_conversions[num2][4]
+    country_type1 = currency_conversions[num1][3]
+    country_type2 = currency_conversions[num2][3]
+
+    aussie_amount = amount / ratio1
+    new_amount = round(aussie_amount * ratio2, 2)
+
+    print(f"{country1} {country_type1} conversion to {country2} {country_type2}")
+    return f"{amount} {abrev1} => {new_amount} {abrev2}"
+
+# Test station #! Just need to add in error handling!!
+hey = diff_to_diff(50, 3, 21)
+print(hey)
+print()
 
 hi5 = convert_to_aussie(100, 3)
 print(hi5)
