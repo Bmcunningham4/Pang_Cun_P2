@@ -28,7 +28,7 @@ file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/c
 sys.path.append(file_path)
 from currency_data import currency_conversions
 
-#* All this crap is so I can print 
+#? All this crap is so I can print for the menu (Even tho could've just used dict.. )
 countries_list = []
 currency_list = []
 abrev_list = []
@@ -39,11 +39,43 @@ for country in range(1, 23):
     abrev_list.append(currency_conversions[country][1])
 
 country_currency = list(zip(numbers_list, countries_list, currency_list, abrev_list))
-print()
-print(country_currency)
-# def aussie_converter(x):
+# print(country_currency)
 for cuz in country_currency:
-    print(cuz)
+    # print(cuz)
+    pass
+
+#? Now getting into it..
+
+def aussie_converter(amount, num): # (Num of what new currency you want)
+    ratio = currency_conversions[num][2]
+    abrev2 = currency_conversions[num][1]
+    country2 = currency_conversions[num][4]
+    country_type = currency_conversions[num][3]
+
+    new_amount = amount * ratio
+    print(f"Aussie Dollar conversion to {country2} {country_type}")
+    return f"{amount} AUD => {new_amount} {abrev2} "
+
+#! Instead of copy and pasting this code I could have a conditional statement that choses whether to convert to or from!!
+def convert_to_aussie(amount, num):
+    ratio = currency_conversions[num][2]
+    abrev2 = currency_conversions[num][1]
+    country2 = currency_conversions[num][4]
+    country_type = currency_conversions[num][3]
+
+    new_amount = amount / ratio
+    print(f"Aussie Dollar conversion to {country2} {country_type}")
+    return f"{amount} AUD => {new_amount} {abrev2} "
+
+hi5 = convert_to_aussie(100, 3)
+print(hi5)
+print()
+
+
+hi = aussie_converter(100, 3)
+print(hi)
+hi4= aussie_converter(100000, 21)
+print(hi4)
 
 
 
