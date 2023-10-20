@@ -22,22 +22,28 @@ api_url = "https://fixer.io/dashboard"
 import requests
 """
 
-import sys
-
 #! Need to get better with this shite...
-file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/quiz_qna.py" # raw string bby to account for space and '
+import sys
+file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/currency_data.py" # raw string bby to account for space and '
 sys.path.append(file_path)
+from currency_data import currency_conversions
 
-# Ohhhhhh The reason you do this is because then you don't have to use the file name each time..
-from quiz_qna import (
-    question_1,
-    question_2,
-    question_3,
-    question_4,
-    question_5, 
-    question_6,
-    question_7
-)
+#* All this crap is so I can print 
+countries_list = []
+currency_list = []
+abrev_list = []
+numbers_list = list(range(1,23))
+for country in range(1, 23):
+    countries_list.append(currency_conversions[country][4])
+    currency_list.append(currency_conversions[country][3])
+    abrev_list.append(currency_conversions[country][1])
+
+country_currency = list(zip(numbers_list, countries_list, currency_list, abrev_list))
+print()
+print(country_currency)
+# def aussie_converter(x):
+for cuz in country_currency:
+    print(cuz)
 
 
 
