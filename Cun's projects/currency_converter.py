@@ -15,3 +15,15 @@
 - CurrencyLayer
 - ExchangeRatesAPI.io
 """
+# from forex_python.converter import CurrencyRates #? This would be ideal from Github but can't figure out 
+"""Didn't work in the end and not worth getting a free trial anywhere..
+api_key = "9341f1a55ff4fa63421f6a94951ef547"
+api_url = "https://fixer.io/dashboard"
+"""
+import requests
+
+
+
+
+
+
