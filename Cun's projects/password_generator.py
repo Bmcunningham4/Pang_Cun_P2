@@ -85,13 +85,6 @@ print(test1.password_3("mango"))
 print(test1.password_4(3, 8))
 """
 
-#! As I predicted need a second function to validate the user input!!
-def get_valid_input(prompt):
-    while True:
-        user_input = input(prompt)
-        try
-
-
 def print_menu():
     print("""You have selected to use the password generator!! 👮‍♀️👩‍💻 #? Probs get rid of that ayy
                     
@@ -104,62 +97,38 @@ Please select from one of the following options:
     Or if you would like to exit press (0)
     """)
     return ""
-    
+
+def get_integer_input(prompt):
+    while True:
+        user_input = input(prompt)
+        try:
+            integer_input = int(user_input)
+            return integer_input
+        except ValueError:
+            print(f"Invalid input. Please enter a valid integer.")
+
 def main():
-    print_menu() # This is clutch having outside while loop!
-    test1 = PasswordGenerator() 
+    print_menu()
+    test1 = PasswordGenerator()
 
     while True:
-        user_input = 0 #? It's good to initialize things ayy
+        user_input = get_integer_input("Select here: ")
 
-        try: 
-            user_input = input("    Select here: ")
-            while isinstance(user_input, int) == False:
-                if isinstance(user_input, str):
-                    print(f"Sorry {user_input} cannot be a string, please try again!")
-                elif isinstance(user_input, float):
-                    print(f"Sorry {user_input} cannot be a float, please try again!")
-                else:
-                    print(f"Sorry {user_input} is of unknown type, please try again"!)
-                          
-            new_input = int(user_input)
-            print()
-            
-            #?: Continue on rest of main here...
-            if new_input == 0:
-                break 
-            
-            elif new_input == 1: #todo: Instead of getting another try except block in here maybe test what it is first then convert to int!
-                user_length = int(input("What is the lenght of the password you would like to generate? "))
-                #! ^^^^^ Instead of doing this each time I'm gonna have to make my checking integer thing a function so I can call upon it more easily
-                print(test1.password_1(user_length))
+        if user_input == 0:
+            break
+        elif user_input == 1:
+            user_length = get_integer_input("What is the length of the password you would like to generate? ")
+            print(test1.password_1(user_length))
+        elif user_input == 2:
+            pass
+        elif user_input == 3:
+            pass
+        elif user_input == 4:
+            pass
+        else:
+            print(f"Sorry {user_input} is not a valid choice. Please try again!")
 
-
-            elif new_input == 2:
-                pass
-            elif new_input == 3:
-                pass
-            elif new_input == 4:
-                pass
-            else:
-                print(f"Sorry {user_input} is not a valid choice please try again!")
-
-
-
-
-
-        except ValueError:
-            print(f"Sorry {user_input} is not a valid choice please try again!")
-
-    
-
-
-
-
-
-    
 if __name__ == "__main__":
-    # Obly don't write all the code her instead have a main function...
     main()
 else: 
     print("Not here fam")
