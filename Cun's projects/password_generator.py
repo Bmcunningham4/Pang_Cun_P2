@@ -1,16 +1,7 @@
 
-# Password generator ideas: 
+#! Password Generator: To fix list:
 """
-#! Have the password specifications for each function above, eg. random 10 letter passwords
-? Maybe have a password generator class and then diff generation functions, so you pick which one you want to use..
-
-? Diff function ideas: (4 should be plenty!)
-- Random combo for n length
-- Random generation where you chose the total length and how many numbers and characters you want in it?
-- Give a password and it converts it a certain format to at least include 1 upper character and 1 punct symbol:
-    eg. input mango output: Mango6
-- Generate a list of n passwords to pick from
-
+- Add user interface
 """
 
 import string
@@ -18,7 +9,6 @@ import random
 
 class PasswordGenerator:
 
-    #Need these as attributes within class
     lower_alphabet = string.ascii_lowercase
     upper_alphabet = string.ascii_uppercase
     full_alphabet = string.ascii_letters
@@ -34,11 +24,13 @@ class PasswordGenerator:
 
 
     # Password generator 2: Chose total length, how many capitals, numbers and punctuation characters you want
-    def password_2(self, length, capitals, numbers, punct): # Note on this for every number total length greater than (cap+num+punct) will assing a non-capital letter!
+    def password_2(self, length, capitals, numbers, punct): # Note on this for every number total length greater than (cap+num+punct) will assign a non-capital letter!
         password = []
         new_length = length - capitals - numbers - punct
+        min_length = capitals + numbers + punct
+
         if new_length < 0:
-            return f"Your password lenth must be longer than {length}, for these parameters!"
+            return f"Your password length must be longer than {min_length}, with these parameters! (You selected a length of {length})"
         for i in range(new_length):
             password.append(random.choice(self.lower_alphabet))
         for i in range(capitals):
@@ -54,11 +46,11 @@ class PasswordGenerator:
     
     # Password gen 3: Turns a string into a password that meets these requirements: At least 8 characters, 1 capital & 1 punct symbol
     def password_3(self, stringy):
-        string_test = all(char in self.full_alphabet for char in stringy) #? Making sure valid string to begin with..
+        string_test = all(char in self.full_alphabet for char in stringy) 
         new_pass = ""
+
         if string_test == True:
             new_pass = stringy.capitalize()
-
             if len(new_pass) < 8:
                 extra_letters_needed = 8 - len(new_pass)
                 for i in range(extra_letters_needed):
@@ -74,15 +66,21 @@ class PasswordGenerator:
     # Password gen 4: Generates n passwords of lenght m
     def password_4(self, how_many, length):
         passwords = []
+        num_password = 0
+
         for i in range(how_many): 
             password = self.password_1(length)
             passwords.append(password)
-        return passwords #? Ideally I'd rather these passwords be iterated like on list with here are your n passwords of lenth m: (but this will have to do..)
+        
+        for password in passwords:
+            num_password += 1
+            print(f"Password option {num_password}: {password}")
 
-#? Testing station...    (all working ✅)
+        return ""
+
+#! All working beautifully..    (all working ✅)
 test1 = PasswordGenerator()
-print(test1.password_1(8))
-print(test1.password_2(10, 3, 3, 3))
-print(test1.password_3("mango")) #? This method is classic lol
-print(test1.password_3("mangosfordays"))
-print(test1.password_4(4, 8))
+print(test1.password_1(12))
+print(test1.password_2(1, 3, 3, 3))
+print(test1.password_3("mango")) 
+print(test1.password_4(3, 8))
