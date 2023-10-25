@@ -85,6 +85,12 @@ print(test1.password_3("mango"))
 print(test1.password_4(3, 8))
 """
 
+#! As I predicted need a second function to validate the user input!!
+def get_valid_input(prompt):
+    while True:
+        user_input = input(prompt)
+        try
+
 
 def print_menu():
     print("""You have selected to use the password generator!! 👮‍♀️👩‍💻 #? Probs get rid of that ayy
