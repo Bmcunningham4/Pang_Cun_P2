@@ -1,8 +1,6 @@
 
 #! Password Generator: To fix list:
-"""
-- Add user interface
-"""
+# User interface at bottom...
 
 import string
 import random
@@ -79,8 +77,79 @@ class PasswordGenerator:
         return ""
 
 #! All working beautifully..    (all working ✅)
+"""
 test1 = PasswordGenerator()
 print(test1.password_1(12))
 print(test1.password_2(1, 3, 3, 3))
 print(test1.password_3("mango")) 
 print(test1.password_4(3, 8))
+"""
+
+
+def print_menu():
+    print("""You have selected to use the password generator!! 👮‍♀️👩‍💻 #? Probs get rid of that ayy
+                    
+Please select from one of the following options:
+    - Press (1) To generate a strong password your choice of length.
+    - Press (2) To customise a password with your choice of: length, capitals, numbers and special characters.
+    - Press (3) To turn any word into a strong password.
+    - Press (4) To generate a list of passwords for you to choose from.
+        
+    Or if you would like to exit press (0)
+    """)
+    return ""
+    
+def main():
+    print_menu() # This is clutch having outside while loop!
+
+    while True:
+        try: 
+            user_input = float(input("    Select here: "))
+            
+            #todo: Continue on rest of main here...
+            if user_input == 0:
+                break
+            
+            elif user_input == 1:
+                pass
+            elif user_input == 2:
+                pass
+            elif user_input == 3:
+                pass
+            elif user_input == 4:
+                pass
+            else:
+                print(f"Sorry {user_input} is not a valid choice please try again!")
+
+
+
+
+
+        except ValueError:
+            print("heyy")
+    
+
+
+
+
+
+    
+if __name__ == "__main__":
+    # Obly don't write all the code her instead have a main function...
+    main()
+else: 
+    print("Not here fam")
+
+
+
+
+#? Diff menu option is this better?:
+"""
+    menu_functions = {
+        0: exit,
+        1: generate_strong_password,
+        2: customize_password,
+        3: word_to_password,
+        4: generate_password_list
+    }
+"""
