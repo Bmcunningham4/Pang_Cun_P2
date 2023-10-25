@@ -1,6 +1,11 @@
 
 #! Password Generator: To fix list:
-# User interface at bottom...
+"""
+Final improvements if I'm getting nitpicky
+- If I make an error in password 2 or 3 instead of chosing which option I want to do again from the start loop around that same option!!!
+- Add simplified menu (at bottom)
+- Loop whether they want to keep using generator or not?
+"""
 
 import string
 import random
@@ -79,7 +84,6 @@ class PasswordGenerator:
 #! All working beautifully..    (all working ✅)
 """
 test1 = PasswordGenerator()
-print(test1.password_1(12))
 print(test1.password_2(1, 3, 3, 3))
 print(test1.password_3("mango")) 
 print(test1.password_4(3, 8))
@@ -106,27 +110,64 @@ def get_integer_input(prompt):
             return integer_input
         except ValueError:
             print(f"Invalid input. Please enter a valid integer.")
+            print()
 
 def main():
     print_menu()
     test1 = PasswordGenerator()
 
     while True:
-        user_input = get_integer_input("Select here: ")
+        print()                         #? Or just "select here: " ??
+        user_input = get_integer_input("Select which mode you would like to use here: ")
 
         if user_input == 0:
             break
         elif user_input == 1:
             user_length = get_integer_input("What is the length of the password you would like to generate? ")
             print(test1.password_1(user_length))
+
+        
         elif user_input == 2:
-            pass
+            user_length = get_integer_input("What is the length of the password you would like to generate? ")
+            user_caps = get_integer_input("How many capital letters would you like? ")
+            user_nums = get_integer_input("How many numbers would you like? ")
+            user_punct = get_integer_input("How many special symbols would you like? ")
+            print(test1.password_2(user_length, user_caps, user_nums, user_punct))
+            
+        #? this ones diff because I can't use the integer test... have to do a seperate string test
         elif user_input == 3:
-            pass
+            while True:
+                user_word = input("What word would you like to turn into a strong password? ")
+                if user_word and isinstance(user_word, str):
+                    break
+                else:
+                    print(f"Sorry {user_word} is an invalid input, please try again!")
+
+            print(test1.password_3(user_word))
+            
+
         elif user_input == 4:
             pass
+            user_length = get_integer_input("What is the length of the passwords you would like to generate? ")
+            user_num = get_integer_input("How many passwords would you like to generate? ")
+            print(test1.password_4(user_num, user_length))
+
         else:
             print(f"Sorry {user_input} is not a valid choice. Please try again!")
+
+        #? This was only causing problems this shite and there's an option to exit anyway...
+        """ user_decision = input("Would you like to keep using the password generator? (y/n) ")
+        new_decision = user_decision.lower()
+        while new_decision != "y" and new_decision != "n":
+            print("That is not a valid choice. Select 'y' for yes or 'n' for no.")
+            user_decision = input("Would you like to keep using the password generator? (y/n) ")
+            new_decision = user_decision.lower()
+
+        if new_decision == "y":
+            pass
+        elif new_decision == "n":
+            pass"""
+
 
 if __name__ == "__main__":
     main()
@@ -148,15 +189,3 @@ else:
 """
 
 
-#* This is the money here to check what type:
-"""
-user_input = input("Enter something: ")
-if isinstance(user_input, str):
-    print("Input is a string.")
-elif isinstance(user_input, int):
-    print("Input is an integer.")
-elif isinstance(user_input, float):
-    print("Input is a float.")
-else:
-    print("Input is of an unknown type.")
-"""
