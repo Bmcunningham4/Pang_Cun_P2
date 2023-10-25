@@ -5,6 +5,7 @@ Final improvements if I'm getting nitpicky
 - If I make an error in password 2 or 3 instead of chosing which option I want to do again from the start loop around that same option!!!
 - Add simplified menu (at bottom)
 - Loop whether they want to keep using generator or not?
+- Exit message ?
 """
 
 import string
@@ -80,14 +81,6 @@ class PasswordGenerator:
             print(f"Password option {num_password}: {password}")
 
         return ""
-
-#! All working beautifully..    (all working ✅)
-"""
-test1 = PasswordGenerator()
-print(test1.password_2(1, 3, 3, 3))
-print(test1.password_3("mango")) 
-print(test1.password_4(3, 8))
-"""
 
 def print_menu():
     print("""You have selected to use the password generator!! 👮‍♀️👩‍💻 #? Probs get rid of that ayy
