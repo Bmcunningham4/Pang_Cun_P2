@@ -101,22 +101,39 @@ Please select from one of the following options:
     
 def main():
     print_menu() # This is clutch having outside while loop!
+    test1 = PasswordGenerator() 
 
     while True:
+        user_input = 0 #? It's good to initialize things ayy
+
         try: 
-            user_input = float(input("    Select here: "))
+            user_input = input("    Select here: ")
+            while isinstance(user_input, int) == False:
+                if isinstance(user_input, str):
+                    print(f"Sorry {user_input} cannot be a string, please try again!")
+                elif isinstance(user_input, float):
+                    print(f"Sorry {user_input} cannot be a float, please try again!")
+                else:
+                    print(f"Sorry {user_input} is of unknown type, please try again"!)
+                          
+            new_input = int(user_input)
+            print()
             
-            #todo: Continue on rest of main here...
-            if user_input == 0:
-                break
+            #?: Continue on rest of main here...
+            if new_input == 0:
+                break 
             
-            elif user_input == 1:
+            elif new_input == 1: #todo: Instead of getting another try except block in here maybe test what it is first then convert to int!
+                user_length = int(input("What is the lenght of the password you would like to generate? "))
+                #! ^^^^^ Instead of doing this each time I'm gonna have to make my checking integer thing a function so I can call upon it more easily
+                print(test1.password_1(user_length))
+
+
+            elif new_input == 2:
                 pass
-            elif user_input == 2:
+            elif new_input == 3:
                 pass
-            elif user_input == 3:
-                pass
-            elif user_input == 4:
+            elif new_input == 4:
                 pass
             else:
                 print(f"Sorry {user_input} is not a valid choice please try again!")
@@ -126,7 +143,8 @@ def main():
 
 
         except ValueError:
-            print("heyy")
+            print(f"Sorry {user_input} is not a valid choice please try again!")
+
     
 
 
@@ -152,4 +170,18 @@ else:
         3: word_to_password,
         4: generate_password_list
     }
+"""
+
+
+#* This is the money here to check what type:
+"""
+user_input = input("Enter something: ")
+if isinstance(user_input, str):
+    print("Input is a string.")
+elif isinstance(user_input, int):
+    print("Input is an integer.")
+elif isinstance(user_input, float):
+    print("Input is a float.")
+else:
+    print("Input is of an unknown type.")
 """
