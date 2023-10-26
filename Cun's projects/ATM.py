@@ -1,17 +1,5 @@
-# Make a start on a lit atm from scratch don't be a hack and find an old one this should be easy money!
 
-#* Needs to have functionality to do:  + extras!
-"""
-- Ability to view balance
-- Deposit
-- Withdraw
-- View history? (only of instances until you exit loop)
-? If I want to make more complicated, could inherit another class with extra features like:
-- ability to exchange
-- Make a new account/ transfer between accounts?
-
-#* ahahah I'll make a pang account and a cun account with passwords and diff amounts..
-"""
+#todo: Changes to add: UI, and error proof!, Exit message?
 import time
 
 #! Pang's password is 1234
@@ -22,14 +10,14 @@ class ATM:
     cun_balance = 5000000
     pang_balance = -50
 
-    def __init__(self): #* Is this garbage really needed here..
+    def __init__(self): 
         self.incorrect_attempts = 0 
-        self.whos_account = None #* This shit seems to save the day for some reason..
+        self.whos_account = None 
 
-    # Got very carried away with this one yikes..
     def check_pin(self):
         for i in range(3):
-            pin = float(input("Please enter you 4 digit pin fam: "))
+            pin = int(input("Please enter you 4 digit pin before continuing: "))
+            
             if pin == 1234 or pin == 3333:
                 break
             else:
@@ -51,11 +39,9 @@ class ATM:
                 print(i)
                 time.sleep(1)
             print("BOOOOOOM 🧨🎉")
-        return ""
+        return "\n" #? That doesn't change anything for some reason...
         
     def view_balance(self):
-        self.check_pin() 
-
         if self.whos_account == "Pang's account":
             print(f"The balance of Pang's account is ${self.pang_balance}")
         elif self.whos_account == "King's account":
@@ -69,7 +55,7 @@ class ATM:
             self.pang_balance += amount
         elif self.whos_account == "King's account":
             self.cun_balance += amount
-        return self.cun_balance, self.pang_balance #? Leaving there's here for the moment to make sure this is working!!
+        return self.cun_balance, self.pang_balance 
 
 
     def withdraw(self, amount): 
@@ -83,18 +69,77 @@ class ATM:
                 print("insufficicient funds broke king..")
             else:
                 self.cun_balance -= amount
-        return self.cun_balance, self.pang_balance #? Leaving there's here for the moment to make sure this is working!!
+        return self.cun_balance, self.pang_balance 
 
-#todo: Additions / improvements from here..
-"""
-- Add a hisory method if I can be fkd.. (Would need to use the enumerate method probs gets a bit hectic will leave as this for now!!!)
-- Fix it so you only need to type your pin in once..
-- Loop throught the system so it doesn't exit you each time, (and make sure balance doesn't keep resetting until you exit!!!)
-"""
 
 
 #? Testing station...
+"""
 bens_test = ATM()
 print(bens_test.view_balance())
 print(bens_test.deposit(20))
 print(bens_test.withdraw(100))
+"""
+#? Not good to copy and paste hey maybe I should be importing these from a functions file or some crap to make the code cleaner!..
+def get_integer_input(prompt):
+    while True:
+        user_input = input(prompt)
+        try:
+            integer_input = int(user_input)
+            return integer_input
+        except ValueError:
+            print(f"Invalid input. Please enter a valid integer.")
+            print()
+
+def print_menu1():
+    print("You have chosen to use the ATM!!", '\n')
+    return ""
+
+def print_menu2():
+    print("""
+                    
+Please select from one of the following options:
+    - Press (1) To view you balance.
+    - Press (2) To make a deposit.
+    - Press (3) To make a withdrawal.
+        
+    Or if you would like to exit press (0)
+    """)
+    return ""
+
+
+def main():
+    print_menu1()
+    test = ATM() # Initialize..
+    test.check_pin()
+    print_menu2()
+
+    while True:
+        print()                      
+        user_input = get_integer_input("Please select here: ")
+
+        if user_input == 0:
+            break
+
+        elif user_input == 1:
+            test.view_balance()
+
+        elif user_input == 2:
+            pass
+            
+        elif user_input == 3:
+            pass
+            
+        else:
+            print(f"Sorry {user_input} is not a valid choice. Please try again!")
+
+    
+
+
+
+
+
+if __name__ == "__main__":
+    main()
+else:
+    print("Wrong module fam...")

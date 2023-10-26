@@ -1,12 +1,7 @@
 
 #! Password Generator: To fix list:
-"""
-Final improvements if I'm getting nitpicky
-- If I make an error in password 2 or 3 instead of chosing which option I want to do again from the start loop around that same option!!!
-- Add simplified menu (at bottom)
-- Loop whether they want to keep using generator or not?
-- Exit message ?
-"""
+# - Exit message ?
+
 
 import string
 import random
@@ -64,7 +59,7 @@ class PasswordGenerator:
             new_pass += random.choice(self.punctuation)
 
         else:
-            print(f"{stringy} is not a valid string, must contain only letters!. eg mango..")  
+            print(f"{stringy} is not a valid string, must contain only letters!. eg mango..")  #? I don't think this ever gets the chance to activate poor fella..
         return new_pass
 
     # Password gen 4: Generates n passwords of lenght m
