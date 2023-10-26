@@ -1,5 +1,5 @@
 
-#todo: Changes to add: UI, and error proof!, Exit message?
+#todo: Changes to add: Exit message?
 import time
 
 #! Pang's password is 1234
@@ -9,7 +9,7 @@ class ATM:
     max_attempts = 3
     cun_balance = 5000000
     pang_balance = -50
-    atm_function = 1
+    atm_function = 0 #? Clutch
 
     def __init__(self): 
         self.incorrect_attempts = 0 
@@ -44,8 +44,15 @@ class ATM:
                 print(i)
                 time.sleep(1)
             print("BOOOOOOM 🧨🎉")
-            self.atm_function = 0
         return "\n" #? That doesn't change anything for some reason...
+    
+    def atm_function(self):
+        if self.whos_account == "King's account" or self.whos_account == "Pang's account":
+            atm_funct = 1
+            return atm_funct
+        else:
+            atm_funct = 0
+            return atm_funct
         
     def view_balance(self):
         if self.whos_account == "Pang's account":
@@ -56,7 +63,6 @@ class ATM:
         return ""
 
     def deposit(self, amount):
-        #! This is where it actually gets complicated because I don't want to have to check the pin every single time... just once
         if amount >= 0:
             if self.whos_account == "Pang's account":
                 self.pang_balance += amount
@@ -84,16 +90,7 @@ class ATM:
         else:
             print("You must withdraw a positive amount!")
 
-
-#? Testing station...
-"""
-bens_test = ATM()
-print(bens_test.view_balance())
-print(bens_test.deposit(20))
-print(bens_test.withdraw(100))
-"""
-#? Not good to copy and paste hey maybe I should be importing these from a functions file or some crap to make the code cleaner!..
-def get_integer_input(prompt):
+def get_integer_input(prompt):  #? Not good to copy and paste hey maybe I should be importing these from a functions file or some crap to make the code cleaner!.
     while True:
         user_input = input(prompt)
         try:
@@ -122,36 +119,36 @@ Please select from one of the following options:
 
 def main():
     print_menu1()
-    test = ATM() # Initialize..
+    test = ATM() 
     test.check_pin()
-    print_menu2()
 
-    while True:
-        print()                      
-        user_input = get_integer_input("Please select here: ")
+    atm_functioning = test.atm_function() 
+    if atm_functioning == 1:
+        print_menu2()
 
-        if user_input == 0:
-            break
+        while True:
+            print()                      
+            user_input = get_integer_input("Please select here: ")
 
-        elif user_input == 1:
-            test.view_balance()
+            if user_input == 0:
+                break
 
-        elif user_input == 2:
-            deposit_amount = get_integer_input("How much would you like to deposit? ")
-            test.deposit(deposit_amount)
-            
-        elif user_input == 3:
-            withdraw_amount = get_integer_input("How much would you like to withdraw? ")
-            test.withdraw(withdraw_amount)
-            
-            
-        else:
-            print(f"Sorry {user_input} is not a valid choice. Please try again!")
+            elif user_input == 1:
+                test.view_balance()
 
-    
-
-
-
+            elif user_input == 2:
+                deposit_amount = get_integer_input("How much would you like to deposit? ")
+                test.deposit(deposit_amount)
+                
+            elif user_input == 3:
+                withdraw_amount = get_integer_input("How much would you like to withdraw? ")
+                test.withdraw(withdraw_amount)
+                
+                
+            else:
+                print(f"Sorry {user_input} is not a valid choice. Please try again!")
+    else:
+        pass 
 
 
 if __name__ == "__main__":
