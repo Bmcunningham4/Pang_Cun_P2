@@ -9,15 +9,20 @@ class ATM:
     max_attempts = 3
     cun_balance = 5000000
     pang_balance = -50
+    atm_function = 1
 
     def __init__(self): 
         self.incorrect_attempts = 0 
         self.whos_account = None 
 
     def check_pin(self):
+        pin = None #? Good old pre-assign saving the day..
         for i in range(3):
-            pin = int(input("Please enter you 4 digit pin before continuing: "))
-            
+            try: #? Usually not ideal to have try except blocks within the functions but ah well desperate times..
+                pin = int(input("Please enter you 4 digit pin before continuing: "))
+            except:
+                print("Invalid input, please enter your 4-digit numeric pin.",'\n')
+                
             if pin == 1234 or pin == 3333:
                 break
             else:
@@ -39,6 +44,7 @@ class ATM:
                 print(i)
                 time.sleep(1)
             print("BOOOOOOM 🧨🎉")
+            self.atm_function = 0
         return "\n" #? That doesn't change anything for some reason...
         
     def view_balance(self):
@@ -51,26 +57,32 @@ class ATM:
 
     def deposit(self, amount):
         #! This is where it actually gets complicated because I don't want to have to check the pin every single time... just once
-        if self.whos_account == "Pang's account":
-            self.pang_balance += amount
-        elif self.whos_account == "King's account":
-            self.cun_balance += amount
-        return self.cun_balance, self.pang_balance 
-
+        if amount >= 0:
+            if self.whos_account == "Pang's account":
+                self.pang_balance += amount
+                return self.pang_balance
+            elif self.whos_account == "King's account":
+                self.cun_balance += amount
+                return self.cun_balance
+        else:
+            print("You must deposit a positive amount!")
 
     def withdraw(self, amount): 
-        if self.whos_account == "Pang's account":
-            if amount > self.pang_balance:
-                print("Insufficient funds broke boy..")
-            else:
-                self.pang_balance -= amount
-        elif self.whos_account == "King's account":
-            if amount > self.cun_balance:
-                print("insufficicient funds broke king..")
-            else:
-                self.cun_balance -= amount
-        return self.cun_balance, self.pang_balance 
-
+        if amount >= 0:
+            if self.whos_account == "Pang's account":
+                if amount > self.pang_balance:
+                    print("Insufficient funds broke boy..")
+                else:
+                    self.pang_balance -= amount
+                    return self.pang_balance #? Do I need to be returning the balances here?
+            elif self.whos_account == "King's account":
+                if amount > self.cun_balance:
+                    print("insufficicient funds broke king..")
+                else:
+                    self.cun_balance -= amount
+                    return self.cun_balance
+        else:
+            print("You must withdraw a positive amount!")
 
 
 #? Testing station...
@@ -125,10 +137,13 @@ def main():
             test.view_balance()
 
         elif user_input == 2:
-            pass
+            deposit_amount = get_integer_input("How much would you like to deposit? ")
+            test.deposit(deposit_amount)
             
         elif user_input == 3:
-            pass
+            withdraw_amount = get_integer_input("How much would you like to withdraw? ")
+            test.withdraw(withdraw_amount)
+            
             
         else:
             print(f"Sorry {user_input} is not a valid choice. Please try again!")
