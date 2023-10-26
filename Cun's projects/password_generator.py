@@ -83,7 +83,7 @@ class PasswordGenerator:
         return ""
 
 def print_menu():
-    print("""You have selected to use the password generator!! 👮‍♀️👩‍💻 #? Probs get rid of that ayy
+    print("""You have chosen to use the password generator!! 👮‍♀️👩‍💻 #? Probs get rid of that ayy
                     
 Please select from one of the following options:
     - Press (1) To generate a strong password your choice of length.
@@ -131,7 +131,7 @@ def main():
         elif user_input == 3:
             while True:
                 user_word = input("What word would you like to turn into a strong password? ")
-                if user_word and isinstance(user_word, str):
+                if user_word.isalpha():
                     break
                 else:
                     print(f"Sorry {user_word} is an invalid input, please try again!")
