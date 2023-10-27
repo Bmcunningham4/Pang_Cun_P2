@@ -19,7 +19,7 @@ for cuz in country_currency:
     pass
     
 
-def aussie_converter(amount, num): # (Num of what new currency you want)
+def aussie_converter(amount, num): 
     ratio = currency_conversions[num][2]
     abrev2 = currency_conversions[num][1]
     country2 = currency_conversions[num][4]
@@ -58,23 +58,6 @@ def diff_to_diff(amount, num1, num2):
     print(f"{country1} {country_type1} conversion to {country2} {country_type2}")
     return f"{amount} {abrev1} => {new_amount} {abrev2}"
 
-# Test station 
-"""
-hey = diff_to_diff(50, 3, 21)
-print(hey)
-print()
-
-hi5 = convert_to_aussie(100, 3)
-print(hi5)
-print()
-
-
-hi = aussie_converter(100, 3)
-print(hi)
-hi4= aussie_converter(100000, 21)
-print(hi4)
-"""
-
 
 def print_menu():
     print("""You have chosen to use the currency converter!! 💸💶 #? Probs get rid of that ayy
@@ -89,7 +72,7 @@ Please select from one of the following options:
     return ""
 
 #? Jeeez this function has come in clutch...
-def get_integer_input(prompt):
+def get_integer_input(prompt): #* Finally figured out while True function = infinite loop until you break out of them ORRRR more importantly return a val!!
     while True:
         user_input = input(prompt)
         try:
@@ -102,7 +85,7 @@ def valid_choice(prompt):
     while True:
         user_cuz = get_integer_input(prompt)
         if user_cuz in range(1, 23):  
-            break  
+            return user_cuz
         else:
             print("Please enter a valid choice from 1 to 22", '\n')
 
@@ -110,7 +93,7 @@ def valid_amount(prompt):
     while True:
         user_money = get_integer_input(prompt)
         if user_money >= 0:
-            break
+            return user_money
         else:
             print("Invalid input. You must enter a positive number!", '\n')    
             
@@ -152,10 +135,23 @@ def main():
             print(aussie_converter(user_amount, user_currency))
         
         elif user_input == 2:
-            pass
+            show_currencies()
+
+            user_currency = valid_choice("Enter the number of the currency you would like to convert from: ")
+            user_amount = valid_amount("Enter the amount you would like to convert: ")
+            print()
+
+            print(convert_to_aussie(user_amount, user_currency))
             
         elif user_input == 3:
-            pass
+            show_currencies()
+
+            user_currency1 = valid_choice("Enter the number of the currency you would like to convert from: ")
+            user_currency2 = valid_choice("Enter the number of the currency you would like to convert to: ")
+            user_amount = valid_amount("Enter the amount you would like to convert: ")
+            print()
+
+            print(diff_to_diff(user_amount, user_currency1, user_currency2))
 
         else:
             print(f"Sorry {user_input} is not a valid choice. Please try again!")
