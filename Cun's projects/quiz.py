@@ -1,7 +1,3 @@
-
-#todo: Final things: Bullet-proof UI...
-
-
 import random
 import sys
 
@@ -62,14 +58,11 @@ def display_questions():
     percent = round(num_correct * 100 / 7, 2)
     print(f"That is {percent}% correct! Woooo")
 
-display_questions()
-
-# print(question_1["correct_answer"])
-
-print("Welcome to my lit NBA themed Quiz... Yew")
 
 def main():
-    pass
+    print("You have chosen to play the NBA themed quiz!")
+    display_questions()
+    
 
 if __name__ == "__main__":
     main()
