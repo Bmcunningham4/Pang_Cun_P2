@@ -119,7 +119,7 @@ def main():
 
         while True:
             print()                      
-            user_input = get_integer_input("Please select here: ")
+            user_input = get_integer_input("Select which ATM option you would like to use: ")
 
             if user_input == 0:
                 break

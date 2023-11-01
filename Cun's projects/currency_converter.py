@@ -111,7 +111,7 @@ def main():
 
     while True:
         print()
-        user_input = get_integer_input("Select which mode you would like to use here: ")
+        user_input = get_integer_input("Select which currency converter setting you would like to use here: ")
 
         if user_input == 0:
             break

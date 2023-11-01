@@ -106,7 +106,7 @@ def main():
 
     while True:
         print()                         #? Or just "select here: " ??
-        user_input = get_integer_input("Select which mode you would like to use here: ")
+        user_input = get_integer_input("Select which password generator mode you would like to use here: ")
 
         if user_input == 0:
             break

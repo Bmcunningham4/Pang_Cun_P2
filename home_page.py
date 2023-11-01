@@ -32,7 +32,6 @@ import ATM                #! (Not true because even after use still yellow)
 import currency_converter
 import quiz
 
-print(password_generator)
 
 def print_home_menu():
     print("""Welcome to Pand & Cun's App Oasis !! :)
@@ -51,19 +50,31 @@ Please select the number of which app you would like to use!
     """)
     return ""
 
+#! Only doing this because I can't seem to figure out how to import it properly here UGHHHHHH
+def get_integer_input1(prompt):
+    while True:
+        user_input = input(prompt)
+        try:
+            integer_input = int(user_input)
+            return integer_input
+        except ValueError:
+            print(f"Invalid input. Please enter a valid integer.")
+            print()
+
 
 def main_main():
     print_home_menu()
 
     while True:
-        print()                       #* Why isn't this bloody working
-        user_input = password_generator.get_integer_input("Select which mode you would like to use here: ")
+        print()                      
+        user_input = get_integer_input1("Enter your app number here: ")
 
         if user_input == 0:
             break
 
         elif user_input == 1:
-            pass
+            password_generator.main()
+            
 
         elif user_input == 2:
             pass
