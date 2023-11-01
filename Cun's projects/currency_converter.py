@@ -152,4 +152,4 @@ if __name__ == "__main__":
     main()
 
 else:
-    print("you lost boyyy..")
+    print()

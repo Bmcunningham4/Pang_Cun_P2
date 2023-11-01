@@ -159,8 +159,8 @@ def main():
 
 if __name__ == "__main__":
     main()
-else: 
-    print("Not here fam")
+else: # Don't need this but ah well
+    print()
 
 
 

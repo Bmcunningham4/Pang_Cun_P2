@@ -67,5 +67,5 @@ def main():
 if __name__ == "__main__":
     main()
 else:
-    print("You don't know me son")
+    print() 
 

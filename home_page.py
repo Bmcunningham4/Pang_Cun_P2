@@ -27,8 +27,8 @@ sys.path.append(file_path2)
 
 
 #? Import all files
-import password_generator #! Ohhhh this is only underlined right now because they haven't been used in my code yet!! 
-import ATM                #! (Not true because even after use still yellow)
+import password_generator #? Ohhhh this is only underlined right now because they haven't been used in my code yet!! 
+import ATM                #! (Not true because even after use still yellow) ~ something fishy here..
 import currency_converter
 import quiz
 
@@ -67,9 +67,11 @@ def main_main():
 
     while True:
         print()                      
-        user_input = get_integer_input1("Enter your app number here: ")
+        user_input = get_integer_input1("Enter the app number here: ")
 
         if user_input == 0:
+            print()
+            print("Thank you for using our App Oasis, We hope you enjoyed !!")
             break
 
         elif user_input == 1:
@@ -77,12 +79,28 @@ def main_main():
             
 
         elif user_input == 2:
-            pass
+            ATM.main()
 
         elif user_input == 3:
-            pass
+            quiz.main()
 
         elif user_input == 4:
+            currency_converter.main()
+
+        elif user_input == 5:
+            # madlib.main()
+            pass
+
+        elif user_input == 6:
+            # calculator.main()
+            pass
+
+        elif user_input == 7:
+            # numGuess.main()
+            pass
+
+        elif user_input == 8:
+            # weatherApp.main()
             pass
 
         else:
