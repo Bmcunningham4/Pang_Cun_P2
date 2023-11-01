@@ -1,6 +1,7 @@
 
 #todo: Changes to add: Exit message?
 import time
+from password_generator import get_integer_input
 
 #! Pang's password is 1234
 #! Cun's password is 3333
@@ -89,16 +90,6 @@ class ATM:
                     return self.cun_balance
         else:
             print("You must withdraw a positive amount!")
-
-def get_integer_input(prompt):  #? Not good to copy and paste hey maybe I should be importing these from a functions file or some crap to make the code cleaner!.
-    while True:
-        user_input = input(prompt)
-        try:
-            integer_input = int(user_input)
-            return integer_input
-        except ValueError:
-            print(f"Invalid input. Please enter a valid integer.")
-            print()
 
 def print_menu1():
     print("You have chosen to use the ATM!!", '\n')

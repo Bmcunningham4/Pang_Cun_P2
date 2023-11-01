@@ -1,4 +1,5 @@
 import sys
+from password_generator import get_integer_input
 file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/currency_data.py"
 sys.path.append(file_path)
 from currency_data import currency_conversions
@@ -70,16 +71,6 @@ Please select from one of the following options:
     Or if you would like to exit press (0)
     """)
     return ""
-
-#? Jeeez this function has come in clutch...
-def get_integer_input(prompt): #* Finally figured out while True function = infinite loop until you break out of them ORRRR more importantly return a val!!
-    while True:
-        user_input = input(prompt)
-        try:
-            integer_input = int(user_input)
-            return integer_input
-        except ValueError:
-            print(f"Invalid input. Please enter a valid integer.", '\n')
 
 def valid_choice(prompt):
     while True:
