@@ -65,7 +65,7 @@ def print_menu():
 Please select from one of the following options:
     - Press (1) To convert from Australian dollars to another currency.
     - Press (2) To convert from another currency to Australian dollars.
-    - Press (3) To convert between any 2 currencies.
+    - Press (3) To convert between any other 2 currencies.
         
     Or if you would like to exit press (0)
     """)
