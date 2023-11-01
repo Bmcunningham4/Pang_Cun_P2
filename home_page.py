@@ -18,7 +18,6 @@ import sys
 #? Get all my file paths!
 file_path1 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects"
 file_path2 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Pang's projects"
-file_path3 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/password_generator.py"
  
 
 #? Upload all filepaths...
@@ -29,7 +28,7 @@ sys.path.append(file_path2)
 #? Import all files
 import password_generator #? Ohhhh this is only underlined right now because they haven't been used in my code yet!! 
 import ATM                #! (Not true because even after use still yellow) ~ something fishy here..
-import currency_converter
+import currency_converter #! When it's yellow that means there are problems!!!
 import quiz
 
 
