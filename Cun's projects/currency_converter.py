@@ -1,34 +1,9 @@
-#Key features/ required components:
-"""
-? Essential:
-- Connected to live currencies
-- Can pick which currency you want to convert and the amount
-- Need a function to fetch specific currencies
-- And then a diff function to do the maths conversion!...\
-
-? Optional:
-- If I can't figure out how to connect to API, then use monopoly money and cun bucks as examples as well as some real googled ones...
-
-? Apaz best to fetch live rates from one of these API's..
-- Open Exchange Rates
-- Fixer.io
-- CurrencyLayer
-- ExchangeRatesAPI.io
-"""
-# from forex_python.converter import CurrencyRates #? This would be ideal from Github but can't figure out 
-"""Didn't work in the end and not worth getting a free trial anywhere..
-api_key = "9341f1a55ff4fa63421f6a94951ef547"
-api_url = "https://fixer.io/dashboard"
-import requests
-"""
-
-#! Need to get better with this shite...
 import sys
-file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/currency_data.py" # raw string bby to account for space and '
+from password_generator import get_integer_input
+file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/currency_data.py"
 sys.path.append(file_path)
 from currency_data import currency_conversions
 
-#? All this crap is so I can print for the menu (Even tho could've just used dict.. )
 countries_list = []
 currency_list = []
 abrev_list = []
@@ -43,10 +18,9 @@ country_currency = list(zip(numbers_list, countries_list, currency_list, abrev_l
 for cuz in country_currency:
     # print(cuz)
     pass
+    
 
-#? Now getting into it..
-
-def aussie_converter(amount, num): # (Num of what new currency you want)
+def aussie_converter(amount, num): 
     ratio = currency_conversions[num][2]
     abrev2 = currency_conversions[num][1]
     country2 = currency_conversions[num][4]
@@ -56,7 +30,6 @@ def aussie_converter(amount, num): # (Num of what new currency you want)
     print(f"Aussie Dollar conversion to {country2} {country_type}")
     return f"{amount} AUD => {new_amount} {abrev2} "
 
-#! Instead of copy and pasting this code I could have a conditional statement that choses whether to convert to or from!!
 def convert_to_aussie(amount, num):
     ratio = currency_conversions[num][2]
     abrev2 = currency_conversions[num][1]
@@ -86,20 +59,97 @@ def diff_to_diff(amount, num1, num2):
     print(f"{country1} {country_type1} conversion to {country2} {country_type2}")
     return f"{amount} {abrev1} => {new_amount} {abrev2}"
 
-# Test station #! Just need to add in error handling!!
-hey = diff_to_diff(50, 3, 21)
-print(hey)
-print()
 
-hi5 = convert_to_aussie(100, 3)
-print(hi5)
-print()
+def print_menu():
+    print("""You have chosen to use the currency converter!! 💸💶 #? Probs get rid of that ayy
+                    
+Please select from one of the following options:
+    - Press (1) To convert from Australian dollars to another currency.
+    - Press (2) To convert from another currency to Australian dollars.
+    - Press (3) To convert between any other 2 currencies.
+        
+    Or if you would like to exit press (0)
+    """)
+    return ""
+
+def valid_choice(prompt):
+    while True:
+        user_cuz = get_integer_input(prompt)
+        if user_cuz in range(1, 23):  
+            return user_cuz
+        else:
+            print("Please enter a valid choice from 1 to 22", '\n')
+
+def valid_amount(prompt):
+    while True:
+        user_money = get_integer_input(prompt)
+        if user_money >= 0:
+            return user_money
+        else:
+            print("Invalid input. You must enter a positive number!", '\n')    
+            
+        
+
+#! Yo pang should, I remove the brackets at the and or keep?
+def show_currencies():
+    print("""
+1)  United States (Dollar)      12) South Korea (Won)
+2)  European Union (Euro)       13) Mexico (Peso)
+3)  United Kingdon (Pound)      14) Brazil (Real)
+4)  Canada (Dollar)             15) Russia (Ruble)
+5)  New Zealand (Dollar)        16) South Africa (Rand)
+6)  Japan (Yen)                 17) Sweden (Krona)
+7)  Switzerland (Franc)         18) Norway (Krone)
+8)  China (Yuan)                19) Denmark (Krone)
+9)  Hong Kong (Dollar)          20) Poland (Zloty)
+10) Singapore (Dollar)          21) Cunland (Cunbucks)
+11) India (Rupee)               22) Monopoly Money (Monpoly Dollaz)
+          """)
+
+def main():
+    print_menu()
+
+    while True:
+        print()
+        user_input = get_integer_input("Select which currency converter setting you would like to use here: ")
+
+        if user_input == 0:
+            break
+
+        elif user_input == 1:
+            show_currencies()
+
+            user_currency = valid_choice("Enter the number of the currency you would like to convert to: ")
+            user_amount = valid_amount("Enter the amount you would like to convert: ")
+            print()
+
+            print(aussie_converter(user_amount, user_currency))
+        
+        elif user_input == 2:
+            show_currencies()
+
+            user_currency = valid_choice("Enter the number of the currency you would like to convert from: ")
+            user_amount = valid_amount("Enter the amount you would like to convert: ")
+            print()
+
+            print(convert_to_aussie(user_amount, user_currency))
+            
+        elif user_input == 3:
+            show_currencies()
+
+            user_currency1 = valid_choice("Enter the number of the currency you would like to convert from: ")
+            user_currency2 = valid_choice("Enter the number of the currency you would like to convert to: ")
+            user_amount = valid_amount("Enter the amount you would like to convert: ")
+            print()
+
+            print(diff_to_diff(user_amount, user_currency1, user_currency2))
+
+        else:
+            print(f"Sorry {user_input} is not a valid choice. Please try again!")
 
 
-hi = aussie_converter(100, 3)
-print(hi)
-hi4= aussie_converter(100000, 21)
-print(hi4)
+if __name__ == "__main__":
+    main()
 
-
-
+else:
+    print()
