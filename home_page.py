@@ -45,7 +45,6 @@ Please select the number of which app you would like to use!
     - (5) Madlib
     - (6) Calculator
     - (7) Number Guessing Game
-    - (8) Weather App
         
     Or if you don't wish to use any of our app's type (I'm worried I'd have too much fun in here)
     """)
@@ -67,6 +66,7 @@ def main_main():
     print_home_menu()
 
     while True:
+        print_home_menu()
         print()                      
         user_input = get_integer_input1("Enter the app number here: ")
 

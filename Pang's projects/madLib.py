@@ -1,6 +1,6 @@
 # madLib game
 
-def madLib():
+def main():
     #! Taking user inputs 
     name = input("Enter name: ") 
     school = input("What school did you go to? ")
@@ -18,4 +18,4 @@ def madLib():
     print(awesome_story)
 
 if __name__ == "__main__":
-    madLib()
+    main()

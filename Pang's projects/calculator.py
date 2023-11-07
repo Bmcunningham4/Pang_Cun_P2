@@ -17,7 +17,7 @@ def division(x,y):
 
 
 #! while loop to operate user input
-def calculator_game():
+def main():
     while True:
         print("Options:")
         print("Enter 'add' for addition")
@@ -48,6 +48,6 @@ def calculator_game():
             print("Invalid input")
 
 if __name__ == "__main__":
-    calculator_game()
+    main()
 
     
