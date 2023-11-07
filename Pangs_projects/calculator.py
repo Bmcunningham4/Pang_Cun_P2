@@ -1,11 +1,6 @@
-#Calculator script that takes user input (2 numbers) and performs the selected algorithm
-import sys
-file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/password_generator.py"
-sys.path.append(file_path)
-from r"Cun's Projects" import password_generator 
+# Calculator script that takes user input (2 numbers) and performs the selected algorithm
 
-
-
+# from Cuns_projects.password_generator import get_integer_input #* This should work and is highlighted like it will then the says can't find module..
 
 #!Functions for arithmetic operations
 def add(x, y):
@@ -23,6 +18,16 @@ def division(x,y):
     return x / y
 
 
+def get_integer_input2(prompt):
+    while True:
+        user_input = input(prompt)
+        try:
+            integer_input = int(user_input)
+            return integer_input
+        except ValueError:
+            print(f"Invalid input. Please enter a valid integer.")
+            print()
+
 #! while loop to operate user input
 def main():
     while True:
@@ -39,8 +44,8 @@ def main():
         if user_input == "exit":
             break
         elif user_input in ("add", "subtract", "multiply", "divide"):
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            num1 = get_integer_input2("Enter the first number: ")
+            num2 = get_integer_input2("Enter the second number: ")
 
             if user_input == "add":
                 print("Result: ", add(num1, num2), '\n')
