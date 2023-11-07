@@ -1,21 +1,18 @@
 import sys
 
-#? Get all my file paths!
 file_path1 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects"
 file_path2 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Pang's projects"
  
-
-#? Upload all filepaths...
 sys.path.append(file_path1)
 sys.path.append(file_path2)
 
-
-#? Import all files
 import password_generator 
 import ATM                
 import currency_converter 
 import quiz
-
+# import calculator
+# import madLib
+# import numGuess
 
 def print_home_menu():
     print("""Welcome to Pand & Cun's App Oasis !! :)
@@ -29,7 +26,7 @@ Please select the number of which app you would like to use!
     - (6) Calculator
     - (7) Number Guessing Game
         
-    Or if you don't wish to use any of our app's type (I'm worried I'd have too much fun in here)
+    Or if you do not wish to use this App Oasis, press (0)
     """)
     return ""
 
@@ -71,15 +68,15 @@ def main_main():
             currency_converter.main()
 
         elif user_input == 5:
-            madLib.main()
+            # madLib.main()
             pass
 
         elif user_input == 6:
-            calculator.main()
+            # calculator.main()
             pass
 
         elif user_input == 7:
-            numGuess.main()
+            # numGuess.main()
             pass
 
 

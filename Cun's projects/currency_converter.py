@@ -89,8 +89,6 @@ def valid_amount(prompt):
             print("Invalid input. You must enter a positive number!", '\n')    
             
         
-
-#! Yo pang should, I remove the brackets at the and or keep?
 def show_currencies():
     print("""
 1)  United States (Dollar)      12) South Korea (Won)
