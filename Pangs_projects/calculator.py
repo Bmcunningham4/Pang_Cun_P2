@@ -1,4 +1,11 @@
 #Calculator script that takes user input (2 numbers) and performs the selected algorithm
+import sys
+file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/password_generator.py"
+sys.path.append(file_path)
+from r"Cun's Projects" import password_generator 
+
+
+
 
 #!Functions for arithmetic operations
 def add(x, y):
@@ -36,16 +43,16 @@ def main():
             num2 = float(input("Enter second number: "))
 
             if user_input == "add":
-                print("Result: ", add(num1, num2))
+                print("Result: ", add(num1, num2), '\n')
             elif user_input == "subtract":
-                print("Result: ", subtract(num1, num2))
+                print("Result: ", subtract(num1, num2), '\n')
             elif user_input == "multiply":
-                print("Result: ", multiply(num1, num2))
+                print("Result: ", multiply(num1, num2), '\n')
             elif user_input == "divide":
-                print("Result: ", division(num1, num2))
+                print("Result: ", division(num1, num2), '\n')
 
         else:
-            print("Invalid input")
+            print("Invalid input", '\n')
 
 if __name__ == "__main__":
     main()

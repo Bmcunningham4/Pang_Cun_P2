@@ -88,7 +88,7 @@ def valid_amount(prompt):
         else:
             print("Invalid input. You must enter a positive number!", '\n')    
             
-        
+            
 def show_currencies():
     print("""
 1)  United States (Dollar)      12) South Korea (Won)
