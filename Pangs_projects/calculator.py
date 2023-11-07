@@ -1,6 +1,6 @@
 # Calculator script that takes user input (2 numbers) and performs the selected algorithm
 
-# from Cuns_projects.password_generator import get_integer_input #* This should work and is highlighted like it will then the says can't find module..
+#* from Cuns_projects.password_generator import get_integer_input --- This should be bloody working but isn't
 
 #!Functions for arithmetic operations
 def add(x, y):
@@ -17,7 +17,6 @@ def division(x,y):
         return "Error: Cannot divide by zero"
     return x / y
 
-
 def get_integer_input2(prompt):
     while True:
         user_input = input(prompt)
@@ -30,6 +29,7 @@ def get_integer_input2(prompt):
 
 #! while loop to operate user input
 def main():
+    print("You have chosen to use the calculator!")
     while True:
         print("Options:")
         print("Enter 'add' for addition")
@@ -39,6 +39,7 @@ def main():
         print ("Enter 'exit' to exit the program")
 
         user_input = input(": ")
+        print()
 
     #! Establishing number variables, exit code and if statements to decide what arithmetic to use
         if user_input == "exit":

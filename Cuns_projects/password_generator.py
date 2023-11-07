@@ -73,8 +73,7 @@ class PasswordGenerator:
         return ""
 
 def print_menu():
-    print("""You have chosen to use the password generator!! 👮‍♀️👩‍💻 
-                    
+    print("""                
 Please select from one of the following options:
     - Press (1) To generate a strong password your choice of length.
     - Press (2) To customise a password with your choice of: length, capitals, numbers and special characters.
@@ -96,10 +95,11 @@ def get_integer_input(prompt):
             print()
 
 def main():
-    print_menu()
+    print("""You have chosen to use the password generator!! 👮‍♀️👩‍💻 """)
     test1 = PasswordGenerator()
 
     while True:
+        print_menu()
         print()                         
         user_input = get_integer_input("Select which password generator mode you would like to use here: ")
 

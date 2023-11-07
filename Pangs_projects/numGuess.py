@@ -3,12 +3,12 @@
 import random 
 
 #! Function defining the game where a random number between 1 and 100 is chosen. User attempt counter set at 0
-def number_guessing_game():
+def main():
     secret_num = random.randint(1, 100)
     attempts = 0
 
     print("Welcome to the Pangsta's awesome number guessing game!!")
-    print("I've chosen a number between 1 and 100...can you guess it?")
+    print("I've chosen a number between 1 and 100...can you guess it?", '\n')
 
     while True:
         try:
@@ -16,20 +16,21 @@ def number_guessing_game():
             attempts += 1
 
             if user_guess < secret_num:
-                print("Too Low! Try again")
+                print("Too Low! Try again", '\n')
             elif user_guess > secret_num:
-                print("Too High! Try again")
+                print("Too High! Try again", '\n')
             else:
-                print(f"Correct! Well done! You guessed the correct number in {attempts} attempts")
+                print(f"Correct! Well done! You guessed the correct number in {attempts} attempts", '\n')
                 break
         except ValueError:
-            print("Invalid input. Please enter a valid number")
+            print("Invalid input. Please enter a valid number", '\n')
 
     play_again = input("Play again? (yes/no): ")
     if play_again.lower() == "yes":
-        number_guessing_game()
+        print()
+        main()
     else:
-        print("Thanks for playing! Come back soon :)")
+        print("Thanks for playing! Come back soon :)", '\n')
 
 if __name__ == "__main__":
-    number_guessing_game()
+    main()

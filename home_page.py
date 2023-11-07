@@ -1,15 +1,10 @@
 
-from Cuns_projects import password_generator 
-from Cuns_projects import ATM                
-from Cuns_projects import currency_converter 
-from Cuns_projects import quiz
-# import calculator
-# import madLib
-# import numGuess
+#! Goat
+from Cuns_projects import password_generator, ATM, currency_converter, quiz         
+from Pangs_projects import calculator, madLib, numGuess
 
 def print_home_menu():
-    print("""Welcome to Pand & Cun's App Oasis !! :)
-                    
+    print("""
 Please select the number of which app you would like to use!
     - (1) Password Generator
     - (2) ATM
@@ -35,12 +30,13 @@ def get_integer_input1(prompt):
 
 
 def main_main():
-    print_home_menu()
+    print("Welcome to Pand & Cun's App Oasis !! :)")
 
     while True:
         print_home_menu()
         print()                      
         user_input = get_integer_input1("Enter the app number here: ")
+        print()
 
         if user_input == 0:
             print()
@@ -49,7 +45,6 @@ def main_main():
 
         elif user_input == 1:
             password_generator.main()
-            
 
         elif user_input == 2:
             ATM.main()
@@ -61,17 +56,13 @@ def main_main():
             currency_converter.main()
 
         elif user_input == 5:
-            # madLib.main()
-            pass
+            madLib.main()
 
         elif user_input == 6:
-            # calculator.main()
-            pass
+            calculator.main()
 
         elif user_input == 7:
-            # numGuess.main()
-            pass
-
+            numGuess.main()
 
         else:
             print(f"Sorry {user_input} is not a valid choice. Please try again!")
