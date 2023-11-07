@@ -18,6 +18,12 @@ import sys
 #? Get all my file paths!
 file_path1 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects"
 file_path2 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Pang's projects"
+
+"""
+# Trying relative paths..
+file_path1 = r"/GitHub/Pang_Cun_P2/Cun's projects"
+file_path2 = r"/GitHub/Pang_Cun_P2/Pang's projects"
+"""
  
 
 #? Upload all filepaths...
@@ -26,9 +32,9 @@ sys.path.append(file_path2)
 
 
 #? Import all files
-import password_generator #? Ohhhh this is only underlined right now because they haven't been used in my code yet!! 
-import ATM                #! (Not true because even after use still yellow) ~ something fishy here..
-import currency_converter #! When it's yellow that means there are problems!!!
+import password_generator 
+import ATM                
+import currency_converter 
 import quiz
 
 
@@ -43,7 +49,6 @@ Please select the number of which app you would like to use!
     - (5) Madlib
     - (6) Calculator
     - (7) Number Guessing Game
-    - (8) Weather App
         
     Or if you don't wish to use any of our app's type (I'm worried I'd have too much fun in here)
     """)
