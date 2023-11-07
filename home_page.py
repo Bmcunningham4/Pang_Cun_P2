@@ -1,10 +1,3 @@
-import sys
-
-file_path1 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects"
-file_path2 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Pang's projects"
- 
-sys.path.append(file_path1)
-sys.path.append(file_path2)
 
 from Cuns_projects import password_generator 
 from Cuns_projects import ATM                
