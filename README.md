@@ -1,14 +1,14 @@
-# Pang_Cun_P2
-Onto the next boyyyyyy
+# Project Description:
 
-# Pang_Cun_P2
-Onto the next boyyyyyy
+The Multi-App Home Menu is a collaborative effort by Ben Cunningham and Isaac Pang. The project is designed to provide users with a convenient and centralized sinterface for accessing a collection of separate applications, each serving a distinct purpose/ providng certain functionality.
 
-23rd October next meet to discuss progress
+
+
+# Project Planning:
 
 # Ideas for pang_cun_p2
-File with an interactive menu system that let's you chose from one of the following: (just ideas at this stage)
-Rated (Easy/ Medium/ Hard) lol
+Files with an interactive menu system that let's you chose from one of the following: (just ideas at this stage)
+Rated (Easy/ Medium/ Hard) 
 - Madlib (E)
 - calculator (E)
 - Number guessing game (E)
