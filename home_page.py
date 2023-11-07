@@ -16,8 +16,8 @@
 import sys
 
 #? Get all my file paths!
-file_path1 = r"C:/Users/isaac/Desktop/GitHub/Pang_Cun_P2/Cun's projects"
-file_path2 = r"C:/Users/isaac/Desktop/GitHub/Pang_Cun_P2/Pang's projects"
+file_path1 = r"C:\Users\isaac\Desktop\GitHub\Pang_Cun_P2\Cun's projects"
+file_path2 = r"C:\Users\isaac\Desktop\GitHub\Pang_Cun_P2\Pang's projects"
  
 
 #? Upload all filepaths...
@@ -30,7 +30,9 @@ import password_generator #? Ohhhh this is only underlined right now because the
 import ATM                #! (Not true because even after use still yellow) ~ something fishy here..
 import currency_converter #! When it's yellow that means there are problems!!!
 import quiz
-
+import numGuess
+import madLib
+import calculator
 
 def print_home_menu():
     print("""Welcome to Pand & Cun's App Oasis !! :)
@@ -87,20 +89,17 @@ def main_main():
             currency_converter.main()
 
         elif user_input == 5:
-            # madlib.main()
+            madLib.main()
             pass
 
         elif user_input == 6:
-            # calculator.main()
+            calculator.main()
             pass
 
         elif user_input == 7:
-            # numGuess.main()
+            numGuess.main()
             pass
 
-        elif user_input == 8:
-            # weatherApp.main()
-            pass
 
         else:
             print(f"Sorry {user_input} is not a valid choice. Please try again!")
