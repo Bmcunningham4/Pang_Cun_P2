@@ -20,6 +20,11 @@ numGuess:
 
 """
 
-#? Final notes"
-# My files don't seem to work on the files themselves but all seem to work from homepage! 
-# Has something to do with my get_integer_input function, which I'm importing all over the place..
+#? Final notes:
+"""
+- My files don't seem to work on the files themselves but all seem to work from homepage! 
+  Has something to do with my get_integer_input function, which I'm importing all over the place..
+- Could add customised -- cover -- around the home menu for all the app menu's as well? 
+- Just need to update readme and make repository public as well!
+
+"""

@@ -5,6 +5,7 @@ from Pangs_projects import calculator, madLib, numGuess
 
 def print_home_menu():
     print("""
+-------------------------------------------------------------          
 Please select the number of which app you would like to use!
     - (1) Password Generator
     - (2) ATM
@@ -13,7 +14,7 @@ Please select the number of which app you would like to use!
     - (5) Madlib
     - (6) Calculator
     - (7) Number Guessing Game
-        
+-------------------------------------------------------------        
     Or if you do not wish to use this App Oasis, press (0)
     """)
     return ""
@@ -71,6 +72,6 @@ def main_main():
 if __name__ == "__main__":
     main_main()
 else: 
-    print("Why would I import this somewhere else..")
+    ""
 
 

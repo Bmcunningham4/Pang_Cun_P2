@@ -59,7 +59,7 @@ def diff_to_diff(amount, num1, num2):
 
 
 def print_menu():
-    print("""You have chosen to use the currency converter!! 💸💶 
+    print("""
                     
 Please select from one of the following options:
     - Press (1) To convert from Australian dollars to another currency.
@@ -103,9 +103,10 @@ def show_currencies():
           """)
 
 def main():
-    print_menu()
+    print("""You have chosen to use the currency converter!! 💸💶 """)
 
     while True:
+        print_menu()
         print()
         user_input = get_integer_input("Select which currency converter setting you would like to use here: ")
 
@@ -147,5 +148,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-else:
-    print()

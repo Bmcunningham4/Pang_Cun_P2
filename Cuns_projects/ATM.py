@@ -113,7 +113,7 @@ def main():
 
     atm_functioning = test.atm_function() 
     if atm_functioning == 1:
-        print_menu2()
+        pass
 
         while True:
             print_menu2()                      
@@ -141,5 +141,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-else:
-    print()
