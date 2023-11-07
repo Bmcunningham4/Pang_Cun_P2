@@ -1,5 +1,3 @@
-
-#todo: Changes to add: Exit message?
 import time
 from password_generator import get_integer_input
 
@@ -19,7 +17,7 @@ class ATM:
     def check_pin(self):
         pin = None #? Good old pre-assign saving the day..
         for i in range(3):
-            try: #? Usually not ideal to have try except blocks within the functions but ah well desperate times..
+            try: 
                 pin = int(input("Please enter you 4 digit pin before continuing: "))
             except:
                 print("Invalid input, please enter your 4-digit numeric pin.",'\n')
@@ -45,7 +43,7 @@ class ATM:
                 print(i)
                 time.sleep(1)
             print("BOOOOOOM 🧨🎉")
-        return "\n" #? That doesn't change anything for some reason...
+        return "\n" 
     
     def atm_function(self):
         if self.whos_account == "King's account" or self.whos_account == "Pang's account":
@@ -81,7 +79,7 @@ class ATM:
                     print("Insufficient funds broke boy..")
                 else:
                     self.pang_balance -= amount
-                    return self.pang_balance #? Do I need to be returning the balances here?
+                    return self.pang_balance 
             elif self.whos_account == "King's account":
                 if amount > self.cun_balance:
                     print("insufficicient funds broke king..")
@@ -134,7 +132,6 @@ def main():
             elif user_input == 3:
                 withdraw_amount = get_integer_input("How much would you like to withdraw? ")
                 test.withdraw(withdraw_amount)
-                
                 
             else:
                 print(f"Sorry {user_input} is not a valid choice. Please try again!")

@@ -61,7 +61,7 @@ def diff_to_diff(amount, num1, num2):
 
 
 def print_menu():
-    print("""You have chosen to use the currency converter!! 💸💶 #? Probs get rid of that ayy
+    print("""You have chosen to use the currency converter!! 💸💶 
                     
 Please select from one of the following options:
     - Press (1) To convert from Australian dollars to another currency.

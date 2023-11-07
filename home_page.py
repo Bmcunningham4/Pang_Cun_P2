@@ -14,7 +14,9 @@ import password_generator
 import ATM                
 import currency_converter 
 import quiz
-
+# import calculator
+# import madLib
+# import numGuess
 
 def print_home_menu():
     print("""Welcome to Pand & Cun's App Oasis !! :)
@@ -32,7 +34,6 @@ Please select the number of which app you would like to use!
     """)
     return ""
 
-#! Only doing this because I can't seem to figure out how to import it properly here UGHHHHHH
 def get_integer_input1(prompt):
     while True:
         user_input = input(prompt)

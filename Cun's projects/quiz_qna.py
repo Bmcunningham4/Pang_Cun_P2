@@ -1,5 +1,3 @@
-# I had to change all these to have the Multichoice letter answer instead of the actual answer..
-
 question_1 = {
     "question": "Which NBA team has won the most championships?",
     "options": ["Boston Celtics", "Golden State Warriors", "Los Angeles Lakers"],

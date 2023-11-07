@@ -1,7 +1,6 @@
 import random
 import sys
 
-#! Need to get better with this shite...
 file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/quiz_qna.py" 
 sys.path.append(file_path)
 
