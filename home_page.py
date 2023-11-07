@@ -1,42 +1,11 @@
 
-#? Welcome to the App Oasis ahahhaahha
-# Othe ideas for names.. 
-""""
-"App Switchboard"
-"App Launcher"
-"App Plaza"
-"App Center"
-"App Junction"
-"App Navigator"
-"App Hub Central"
-"App Carousel"
-"App Select"
-"""
-
-import sys
-
-#? Get all my file paths!
-file_path1 = r"C:\Users\isaac\Desktop\GitHub\Pang_Cun_P2\Cun's projects"
-file_path2 = r"C:\Users\isaac\Desktop\GitHub\Pang_Cun_P2\Pang's projects"
- 
-
-#? Upload all filepaths...
-sys.path.append(file_path1)
-sys.path.append(file_path2)
-
-
-#? Import all files
-import password_generator #? Ohhhh this is only underlined right now because they haven't been used in my code yet!! 
-import ATM                #! (Not true because even after use still yellow) ~ something fishy here..
-import currency_converter #! When it's yellow that means there are problems!!!
-import quiz
-import numGuess
-import madLib
-import calculator
+#! Goat
+from Cuns_projects import password_generator, ATM, currency_converter, quiz         
+from Pangs_projects import calculator, madLib, numGuess
 
 def print_home_menu():
-    print("""Welcome to Pand & Cun's App Oasis !! :)
-                    
+    print("""
+-------------------------------------------------------------          
 Please select the number of which app you would like to use!
     - (1) Password Generator
     - (2) ATM
@@ -45,12 +14,11 @@ Please select the number of which app you would like to use!
     - (5) Madlib
     - (6) Calculator
     - (7) Number Guessing Game
-        
-    Or if you don't wish to use any of our app's type (I'm worried I'd have too much fun in here)
+-------------------------------------------------------------        
+    Or if you do not wish to use this App Oasis, press (0)
     """)
     return ""
 
-#! Only doing this because I can't seem to figure out how to import it properly here UGHHHHHH
 def get_integer_input1(prompt):
     while True:
         user_input = input(prompt)
@@ -63,12 +31,13 @@ def get_integer_input1(prompt):
 
 
 def main_main():
-    print_home_menu()
+    print("Welcome to Pand & Cun's App Oasis !! :)")
 
     while True:
         print_home_menu()
         print()                      
         user_input = get_integer_input1("Enter the app number here: ")
+        print()
 
         if user_input == 0:
             print()
@@ -77,7 +46,6 @@ def main_main():
 
         elif user_input == 1:
             password_generator.main()
-            
 
         elif user_input == 2:
             ATM.main()
@@ -90,16 +58,12 @@ def main_main():
 
         elif user_input == 5:
             madLib.main()
-            pass
 
         elif user_input == 6:
             calculator.main()
-            pass
 
         elif user_input == 7:
             numGuess.main()
-            pass
-
 
         else:
             print(f"Sorry {user_input} is not a valid choice. Please try again!")
@@ -108,6 +72,6 @@ def main_main():
 if __name__ == "__main__":
     main_main()
 else: 
-    print("Why would I import this somewhere else..")
+    ""
 
 

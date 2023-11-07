@@ -1,12 +1,5 @@
 import random
-import sys
-
-#! Need to get better with this shite...
-file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/quiz_qna.py" 
-sys.path.append(file_path)
-
-
-from quiz_qna import (
+from Cuns_projects.quiz_qna import (
     question_1,
     question_2,
     question_3,
@@ -66,6 +59,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-else:
-    print() 
+
 

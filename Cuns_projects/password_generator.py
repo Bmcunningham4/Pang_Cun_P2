@@ -1,8 +1,3 @@
-
-#! Password Generator: To fix list:
-# - Exit message ?
-
-
 import string
 import random
 
@@ -78,8 +73,7 @@ class PasswordGenerator:
         return ""
 
 def print_menu():
-    print("""You have chosen to use the password generator!! 👮‍♀️👩‍💻 #? Probs get rid of that ayy
-                    
+    print("""                
 Please select from one of the following options:
     - Press (1) To generate a strong password your choice of length.
     - Press (2) To customise a password with your choice of: length, capitals, numbers and special characters.
@@ -101,11 +95,12 @@ def get_integer_input(prompt):
             print()
 
 def main():
-    print_menu()
+    print("""You have chosen to use the password generator!! 👮‍♀️👩‍💻 """)
     test1 = PasswordGenerator()
 
     while True:
-        print()                         #? Or just "select here: " ??
+        print_menu()
+        print()                         
         user_input = get_integer_input("Select which password generator mode you would like to use here: ")
 
         if user_input == 0:
@@ -122,7 +117,7 @@ def main():
             user_punct = get_integer_input("How many special symbols would you like? ")
             print(test1.password_2(user_length, user_caps, user_nums, user_punct))
             
-        #? this ones diff because I can't use the integer test... have to do a seperate string test
+        #? (This ones diff need to use separate string test)
         elif user_input == 3:
             while True:
                 user_word = input("What word would you like to turn into a strong password? ")
@@ -143,37 +138,7 @@ def main():
         else:
             print(f"Sorry {user_input} is not a valid choice. Please try again!")
 
-        #? This was only causing problems this shite and there's an option to exit anyway...
-        """ user_decision = input("Would you like to keep using the password generator? (y/n) ")
-        new_decision = user_decision.lower()
-        while new_decision != "y" and new_decision != "n":
-            print("That is not a valid choice. Select 'y' for yes or 'n' for no.")
-            user_decision = input("Would you like to keep using the password generator? (y/n) ")
-            new_decision = user_decision.lower()
-
-        if new_decision == "y":
-            pass
-        elif new_decision == "n":
-            pass"""
-
-
 if __name__ == "__main__":
     main()
-else: # Don't need this but ah well
-    print()
-
-
-
-
-#? Diff menu option is this better?:
-"""
-    menu_functions = {
-        0: exit,
-        1: generate_strong_password,
-        2: customize_password,
-        3: word_to_password,
-        4: generate_password_list
-    }
-"""
 
 

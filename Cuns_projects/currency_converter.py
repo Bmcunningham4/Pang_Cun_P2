@@ -1,8 +1,6 @@
-import sys
-from password_generator import get_integer_input
-file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/currency_data.py"
-sys.path.append(file_path)
-from currency_data import currency_conversions
+
+from Cuns_projects.password_generator import get_integer_input
+from Cuns_projects.currency_data import currency_conversions
 
 countries_list = []
 currency_list = []
@@ -61,7 +59,7 @@ def diff_to_diff(amount, num1, num2):
 
 
 def print_menu():
-    print("""You have chosen to use the currency converter!! 💸💶 #? Probs get rid of that ayy
+    print("""
                     
 Please select from one of the following options:
     - Press (1) To convert from Australian dollars to another currency.
@@ -88,9 +86,7 @@ def valid_amount(prompt):
         else:
             print("Invalid input. You must enter a positive number!", '\n')    
             
-        
-
-#! Yo pang should, I remove the brackets at the and or keep?
+            
 def show_currencies():
     print("""
 1)  United States (Dollar)      12) South Korea (Won)
@@ -107,9 +103,10 @@ def show_currencies():
           """)
 
 def main():
-    print_menu()
+    print("""You have chosen to use the currency converter!! 💸💶 """)
 
     while True:
+        print_menu()
         print()
         user_input = get_integer_input("Select which currency converter setting you would like to use here: ")
 
@@ -151,5 +148,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-else:
-    print()
