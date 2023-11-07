@@ -16,8 +16,8 @@
 import sys
 
 #? Get all my file paths!
-file_path1 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects"
-file_path2 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Pang's projects"
+file_path1 = r"C:/Users/isaac/Desktop/GitHub/Pang_Cun_P2/Cun's projects"
+file_path2 = r"C:/Users/isaac/Desktop/GitHub/Pang_Cun_P2/Pang's projects"
  
 
 #? Upload all filepaths...
