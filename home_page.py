@@ -6,10 +6,10 @@ file_path2 = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Pang's projects
 sys.path.append(file_path1)
 sys.path.append(file_path2)
 
-import password_generator 
-import ATM                
-import currency_converter 
-import quiz
+from Cuns_projects import password_generator 
+from Cuns_projects import ATM                
+from Cuns_projects import currency_converter 
+from Cuns_projects import quiz
 # import calculator
 # import madLib
 # import numGuess

@@ -1,5 +1,5 @@
 import time
-from password_generator import get_integer_input
+from Cuns_projects.password_generator import get_integer_input
 
 #! Pang's password is 1234
 #! Cun's password is 3333

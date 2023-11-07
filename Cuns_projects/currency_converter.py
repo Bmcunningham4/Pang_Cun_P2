@@ -1,8 +1,8 @@
 import sys
-from password_generator import get_integer_input
+from Cuns_projects.password_generator import get_integer_input
 file_path = r"/Users/bencunningham/Documents/GitHub/Pang_Cun_P2/Cun's projects/currency_data.py"
 sys.path.append(file_path)
-from currency_data import currency_conversions
+from Cuns_projects.currency_data import currency_conversions
 
 countries_list = []
 currency_list = []
