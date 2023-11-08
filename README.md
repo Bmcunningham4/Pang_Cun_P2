@@ -1,6 +1,8 @@
 # Project Description:
 
-The Multi-App Home Menu is a collaborative effort by Ben Cunningham and Isaac Pang. The project is designed to provide users with a convenient and centralized interface for accessing a collection of separate applications, each serving a distinct purpose/ providng certain functionality.
+The Multi-App Home Menu is a collaborative effort by Ben Cunningham and Isaac Pang. The project is designed to provide users with a convenient and centralized interface for accessing a collection of separate applications, each serving a distinct purpose/ providng certain functionality. 
+
+In order to use our Multi-App Menu, clone this repository and locate the home_page.py file and run it!!
 
 
 
